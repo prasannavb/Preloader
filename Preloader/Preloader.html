@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Preloader.css">
+    <link rel="shortcut icon" href="loadersvg.jpg" type="image/x-icon">
+<!-- <script type="text/javascript" src="Preloader.js"></script> -->
+    <title>PRELOADER</title>
+</head>
+<body>
+    <div id="preload">
+        <div class="preloader">
+            <div class="total">
+                <div class="speakers">
+                    <div class="s1 sf">S</div>
+                    <div class="s2 sf">P</div>
+                    <div class="s3 sf">E</div>
+                    <div class="s4 sf">A</div>
+                    <div class="s5 sf">K</div>
+                    <div class="s6 sf">E</div>
+                    <div class="s7 sf">R</div>
+                    <div class="s8 sf">S</div>
+                    <div class="s9 sf">❜</div>
+                </div>
+                <div class="forum">
+                    <div class="f1 sf">F</div>
+                    <div class="f2 sf">O</div>
+                    <div class="f3 sf">R</div>
+                    <div class="f4 sf">U</div>
+                    <div class="f5 sf">M</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+</div>
+
+<script>
+	  console.log("inside js");
+  const main = document.getElementById("main");
+        const loader = document.getElementsByClassName("sf");
+        window.addEventListener("load", vanishOut);
+        function vanishOut() {
+            main.style.opacity = "0";
+            setTimeout(vanish, 2500);
+        }
+        function vanish() {
+            for (let i = 1; i < 14; i++) {
+                if (i == 9) {
+                    continue;
+                }
+                loader[i].classList.add("disappear");
+            }
+            setTimeout(remove, 500);
+        }
+        function remove() {
+            main.style.opacity = "1";
+            const load = document.getElementById("preload");
+            load.style.animation = "vanish 2s forwards";
+            setTimeout(rm,100);
+        }
+        function rm() {
+            const load = document.getElementById("preload");
+            load.remove();
+        }
+</script>
+</body>
+</html>
